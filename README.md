@@ -3,7 +3,7 @@ Making Tables with gt and Great Tables
 
 ### posit::conf(2024)
 
-by INSTRUCTOR_NAME
+by Michael Chow, Rich Iaonne
 
 -----
 
