@@ -1,4 +1,4 @@
-WORKSHOP_TITLE
+Making Tables with gt and Great Tables
 ================
 
 ### posit::conf(2024)
