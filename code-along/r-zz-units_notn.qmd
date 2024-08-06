@@ -1,0 +1,18 @@
+---
+output: html
+html-table-processing: none
+---
+
+```{r}
+library(gt)
+library(tidyverse)
+```
+
+```{r}
+tibble(
+    units = "x^-2",
+    out = units
+) |>
+    gt() |>
+    fmt_units(columns = out)
+```

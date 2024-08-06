@@ -1,0 +1,128 @@
+---
+output: html
+html-table-processing: none
+---
+
+# Code Along in R: Coffee Table
+
+## Start
+
+Setting up.
+
+```{r}
+library(gt)
+library(tidyverse)
+```
+
+Importing the data.
+
+```{r}
+coffee_sales <- readr::read_csv("data/coffee-sales.csv")
+
+coffee_sales
+```
+
+Let's get the data into gt.
+
+```{r}
+gt_tbl_1 <- #
+
+gt_tbl_1
+```
+
+## Structure Basics
+
+Add a title to the table to explain contents.
+
+```{r}
+gt_tbl_2 <- gt_tbl_1 # |> 
+
+gt_tbl_2
+```
+
+Group numerical columns with a spanner. One grouping should be for revenue columns, another should be for profit columns.
+
+```{r}
+gt_tbl_3 <- gt_tbl_2 # |> # |>
+
+gt_tbl_3
+```
+
+Change Column labels for readability. The column names are:
+`icon`, `product`, `revenue_dollars`, `revenue_pct`, `profit_dollars`, and `profit_pct`.
+
+```{r}
+gt_tbl_4 <- gt_tbl_3 # |>
+
+gt_tbl_4
+```
+
+## Formatting Basics
+
+Format the currency values to make them look better.
+
+```{r}
+gt_tbl_5 <- gt_tbl_4 # |>
+
+gt_tbl_5
+```
+
+Format the fractional values by turning them into percentages.
+
+```{r}
+gt_tbl_6 <- gt_tbl_5 # |>
+
+gt_tbl_6
+```
+
+## Styling with tab_style()
+
+Add an 'aliceblue' background to columns pertaining to revenue.
+
+```{r}
+gt_tbl_7 <- gt_tbl_6 # |>
+
+gt_tbl_7
+```
+
+Add an 'papayawhip' background to columns pertaining to profit.
+
+```{r}
+gt_tbl_8 <- gt_tbl_7 # |>
+
+gt_tbl_8
+```
+
+Make the text bold in the bottom row (the totals column).
+
+```{r}
+gt_tbl_9 <- gt_tbl_8 # |>
+
+gt_tbl_9
+```
+
+## Three Last Things
+
+Add a column of bar plots using the monthly revenue column.
+
+```{r}
+gt_tbl_10 <- gt_tbl_9 # |>
+
+gt_tbl_10
+```
+
+Add images to the `icon` column. The images are in the `img` directory.
+
+```{r}
+gt_tbl_11 <- gt_tbl_10 # |>
+
+gt_tbl_11
+```
+
+Turn the `NA` cell into a blank cell.
+
+```{r}
+gt_tbl_12 <- gt_tbl_11 # |>
+
+gt_tbl_12
+```

@@ -1,0 +1,13 @@
+---
+output: html
+html-table-processing: none
+jupyter: python3
+---
+
+```{python}
+from great_tables import GT, define_units
+```
+
+```{python}
+define_units("x^-2")
+```
