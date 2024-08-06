@@ -1,0 +1,141 @@
+---
+output: html
+html-table-processing: none
+---
+
+# Code Along in R: Reactions Table
+
+## Start
+
+Setting up.
+
+```{r}
+library(gt)
+library(tidyverse)
+```
+
+Transforming the data.
+
+```{r}
+reactions_mini <-
+  reactions |>
+  dplyr::filter(cmpd_type == "mercaptan") |>
+  dplyr::select(cmpd_name, cmpd_formula, OH_k298, O3_k298, Cl_k298, NO3_k298)
+
+reactions_mini
+```
+
+Let's get the data into gt. Plus let's make a stub.
+
+```{r}
+gt_tbl_1 <- gt(reactions_mini, rowname_col = "cmpd_name")
+
+gt_tbl_1
+```
+
+## Introducing Units Notation
+
+Add a title to the table to explain contents.
+
+```{r}
+gt_tbl_2 <- 
+  gt_tbl_1 |>
+  tab_header(
+    title = md("Gas-phase reactions of selected **mercaptan** compounds")
+  )
+
+gt_tbl_2
+```
+
+Group numerical columns with a spanner. Use this for the label:
+`"Reaction Rate Constant (298 K),<br>{{cm^3 molecules^–1 s^–1}}"`
+
+```{r}
+gt_tbl_3 <- 
+  gt_tbl_2 |>
+  tab_spanner(
+    label = md("Reaction Rate Constant (298 K),<br>{{cm^3 molecules^–1 s^–1}}"),
+    columns = ends_with("k298")
+  )
+
+gt_tbl_3
+```
+
+Change Column labels for readability. The column names are:
+`cmpd_formula`, `OH_k298`, `O3_k298`, `Cl_k298`, and `NO3_k298`.
+
+```{r}
+gt_tbl_4 <- 
+  gt_tbl_3 |>
+  cols_label(
+    cmpd_formula = "",
+    OH_k298 = "OH",
+    O3_k298 = "{{%O3%}}",
+    Cl_k298 = "Cl",
+    NO3_k298 = "{{%NO3%}}"
+  )
+
+gt_tbl_4
+```
+
+## Formatting for Science with fmt_chem() and fmt_scientific()
+
+Format the chemical formulas to make them look better.
+
+```{r}
+gt_tbl_5 <- gt_tbl_4 |> fmt_chem(columns = cmpd_formula)
+
+gt_tbl_5
+```
+
+Format the numeric values.
+
+```{r}
+gt_tbl_6 <- 
+  gt_tbl_5 |>
+  fmt_scientific(columns = ends_with("k298"))
+
+gt_tbl_6
+```
+
+Replace the `NA` values.
+
+```{r}
+gt_tbl_7 <- gt_tbl_6 |> sub_missing()
+
+gt_tbl_7
+```
+
+Hide redundant columns.
+
+```{r}
+gt_tbl_8 <- gt_tbl_7 |> cols_hide(columns = O3_k298)
+
+gt_tbl_8
+```
+
+## Using the opt_*() Functions for Quick Styling
+
+Use theming to style quickly.
+
+```{r}
+gt_tbl_9 <- gt_tbl_8 |> opt_stylize()
+
+gt_tbl_9
+```
+
+Don't use the default font.
+
+```{r}
+gt_tbl_10 <- gt_tbl_9 |> opt_table_font(stack = "humanist")
+
+gt_tbl_10
+```
+
+Make more space between neighboring values.
+
+```{r}
+gt_tbl_11 <- gt_tbl_10 |> opt_horizontal_padding(scale = 2)
+
+gt_tbl_11
+```
