@@ -1,4 +1,10 @@
-.Rproj.user
-.Rhistory
-.RData
-.Ruserdata
+# Quarto-specific outputs
+*.css
+*.ipynb
+*.js
+*.woff
+*.html
+slides/*slides_files*
+
+# macOS files
+.DS_Store
