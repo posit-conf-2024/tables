@@ -55,9 +55,13 @@ This course is for you if you:
 
 **Michael Chow**, Senior Software Engineer, Posit
 
+<img src="https://static.rainfocus.com/posit/positconf24/att/1685039593688001rH8t/attprofile/michael-chow_1708103224421001EqS1.jpg" alt="Michael Chow" width="150" height="150">
+
 Michael is a data scientist and software engineer. He has programmed in Python and R for over a decade, and he obtained a PhD in cognitive psychology from Princeton University. His interests include statistical methods, skill acquisition, and human memory.
 
 **Richard Iannone**, Senior Software Engineer, Posit
+
+<img src="https://static.rainfocus.com/posit/positconf24/att/1685039598474001rLlG/attprofile/richard-iannone_1708103217707001jM1T.jpg" alt="Richard Iannone" width="150" height="150">
 
 Richard is a software engineer and table enthusiast. He and R go way back and he's been getting better at writing code in Python too. For the most part, Rich enjoys creating open source packages in R and Python so that people can great things in their own work.
 
