@@ -1,0 +1,23 @@
+---
+output: html
+---
+
+# Exercises: Coffee Table
+
+Now that you have a working table, there's a few things you should experiment
+with:
+
+1. Try making the nanoplots as line plots.
+
+2. Experiment with `nanoplot_options()`: you have to use that helper in the
+`options` argument (this function needs to be imported if using Great Tables)
+
+3. Try formatting the `*dollars` columns with `fmt_number()`, play around
+with the options in that method/function to make it look like the formatting was
+done with `fmt_currency()`
+
+4. Export the table as a PNG file:
+
+    a. Use the `.save()` method for this task with Great Tables
+
+    b. Use `gtsave()` to save the image with gt

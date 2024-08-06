@@ -1,0 +1,27 @@
+---
+output: html
+---
+
+# Exercises: Reactions Table
+
+This table is highly presentable and worthy of publication! You should still
+experiment with the API and see what's possible. Here are some suggestions:
+
+1. Replace `NA` values with the text `"N/A"`. And make it bold.
+
+2. Place a label above the compound names in the stub. Can you find the method
+that makes this possible?
+
+3. Try formatting the rate constant values as decimal values with
+`.fmt_number()` and also:
+
+    a. Scale the numeric values so they are all closer to `1`
+
+    b. Modify the units in the spanner label to reflect this scaling
+
+    c. Add a source note to the table explaining that values are scaled
+
+4. Try out the different themes/colors in `.opt_table_font()`
+
+5. Change the alignment of the text in `cmpd_formula` to a center alignment (you
+have to find out the name of method that does this first).

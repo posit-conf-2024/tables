@@ -1,0 +1,7 @@
+---
+output: html
+---
+
+# TODO: add suggestions for tables to start from in free-form table making exercise
+
+# - choose from tidytuesday datasets
