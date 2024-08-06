@@ -7,20 +7,6 @@ by Michael Chow, Rich Iannone
 
 -----
 
-INSTRUCTIONS FOR INSTRUCTORS: Please insert information about your
-workshop below. Then, add workshop content in the materials folder and
-link to each session’s materials from the schedule below. You are
-welcomed to add more rows to the schedule. We just ask that you take
-breaks at the specified times. Once you are done adding information, you
-can remove these instructions from the README.
-
-Alternatively, you can completely redo the organization of this repo 
-as a Quarto website or some other format you prefer to host your workshop
-materials. The only requirement is that your workshop materials are hosted 
-here.
-
------
-
 :spiral_calendar: August 12, 2024
 :alarm_clock:     09:00 - 17:00
 :hotel:           ROOM TBD
@@ -30,18 +16,28 @@ here.
 
 ## Description
 
-ADD DESCRIPTION
+This workshop is all about making tables for publication and display purposes. We believe that effective tables have these things in common:
+
+1. structuring that aids in the reading of the table
+2. well-formatted values, fitting expectations for the field of study 
+3. styling that reduces time to insight and improves aesthetics
+
+This is a 'bilingual' workshop that has materials both in R and Python. The gt package will be used when teaching in R and the Great Tables package is for the Python parts. We are flexible with regard to rebalancing the instruction to either the R or Python sides. Your feedback in class will let us know where more focus should placed.
 
 ## Audience
 
-ADD AUDIENCE INFO
+This course is for you if you:
+
+-   have some experience with data analysis in R or Python
+-   often create reporting that involves summarizations of data
+-   were frustrated making tables for display purposes outside of R or Python
+-   found beautiful-looking tables in the wild and wondered: 'How could I do that?'
 
 ## Prework
 
-ADD INFORMATION YOU WANT LEARNERS TO HAVE / STEPS THEY WANT THEM TO
-COMPLETE PRIOR TO THE WORKSHOP. THIS COULD BE A LINK TO A THREAD ON
-RSTUDIO COMMUNITY, PACKAGE INSTALL INSTRUCTIONS, HOW TO GET AN
-RSTUDIO.CLOUD ACCOUNT, ETC.
+- [ ] Bring your laptop.
+- [ ] Sign up for a GitHub account. (Create an account [here](https://github.com/join).) 
+- [ ] Sign up for a Posit Cloud account. (Create an account [here](https://posit.cloud/plans).)
 
 ## Schedule
 
@@ -57,7 +53,13 @@ RSTUDIO.CLOUD ACCOUNT, ETC.
 
 ## Instructor(s)
 
-ADD INSTRUCTOR(S) BIO
+**Michael Chow**, Senior Software Engineer, Posit
+
+Michael is a data scientist and software engineer. He has programmed in Python and R for over a decade, and he obtained a PhD in cognitive psychology from Princeton University. His interests include statistical methods, skill acquisition, and human memory.
+
+**Richard Iannone**, Senior Software Engineer, Posit
+
+Richard is a software engineer and table enthusiast. He and R go way back and he's been getting better at writing code in Python too. For the most part, Rich enjoys creating open source packages in R and Python so that people can great things in their own work.
 
 -----
 
