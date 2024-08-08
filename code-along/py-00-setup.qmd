@@ -1,0 +1,48 @@
+# Setup
+
+If using Posit Cloud for Jupyter Notebook then go to:
+
+- https://posit.cloud/spaces/517371/join?access_code=kDrE-6LPvl0DKfxel8knEOH57Hiz3F2sT7-hoEhZ
+
+Then open the project called `using-great-tables`
+
+
+If running everything in your own IDE (e.g., VS Code, Positron, etc.) then clone this repo:
+
+- https://github.com/posit-conf-2024/tables
+
+Ensure that the following Python libraries are installed:
+
+```bash
+pip install polars great-tables
+```
+
+To test that the installations were successful, use this:
+
+```{python}
+from great_tables import GT, exibble
+import polars as pl
+import polars.selectors as cs
+```
+
+```{python}
+GT(exibble)
+```
+
+```{python}
+exibble_pl = pl.from_pandas(exibble)
+```
+
+Examples with Polars selectors:
+
+```{python}
+exibble_pl.select(cs.numeric())
+```
+
+```{python}
+exibble_pl.select(cs.starts_with("date"))
+```
+
+```{python}
+exibble_pl.select(cs.ends_with("time"))
+```
