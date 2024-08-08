@@ -14,7 +14,7 @@ If running everything in your own IDE (e.g., VS Code, Positron, etc.) then clone
 Ensure that the following Python libraries are installed:
 
 ```bash
-pip install polars great-tables
+pip install polars pandas great-tables
 ```
 
 To test that the installations were successful, use this:
