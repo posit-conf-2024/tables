@@ -1,0 +1,28 @@
+---
+output: html
+---
+
+# Exercises: Power Generation Table
+
+Let's do some exercises where you experiment with the API and see what's
+possible. Here are some suggestions:
+
+1. Are there better options for column widths when using `cols_width()`? Try
+increasing and also decreasing the px amounts and see what the effect is on
+the table. You could also try this with the `exibble` dataset.
+
+2. Can you format the `CO2 Intensity` values as integers by using `fmt_number()`?
+
+3. The `data_color()` function has a lot of options. Here are some ideas for
+experimenting with it.
+
+    a. Apply the function to numeric columns in `exibble`
+
+    b. Try the same thing but only with string columns.
+
+    c. Can you exclude certain rows when using `data_color()`?
+
+    d. What happens when there are `NA` values in cells where `data_color()`
+    is applied?
+
+4. Try out the different font stacks in `opt_table_font()`
