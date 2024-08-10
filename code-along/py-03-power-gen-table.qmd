@@ -137,7 +137,11 @@ gt_tbl_9 = # (
 gt_tbl_9
 ```
 
-Color the cells in the `Gas` to `Oil` columns according to value (in range of 0 to 1). Use the white to dark-brown palette.
+Color the cells in the `Gas` to `Oil` columns according to value (in range of 0 to 1). Use this white to dark-brown palette:
+
+```py
+["snow", "#DC863B", "#D69C4E", "sienna4", "tomato4"]
+```
 
 ```{python}
 gt_tbl_10 = # (
