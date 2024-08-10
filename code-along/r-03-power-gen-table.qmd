@@ -104,7 +104,7 @@ gt_tbl_7
 Color the cells in the `Hydro` to `Geothermal` columns according to value (in range of 0 to 1). Use this white to green palette:
 
 ```r
-c( "snow", "chartreuse4", "chartreuse3", "#00A600")
+c("snow", "chartreuse4", "chartreuse3", "#00A600")
 ```
 
 ```{r}
