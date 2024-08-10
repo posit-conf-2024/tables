@@ -12,7 +12,7 @@ Setting up.
 
 ```{python}
 import pandas as pd
-from great_tables import GT, md
+from great_tables import GT, md, style, loc
 ```
 
 Importing the data.
@@ -40,12 +40,9 @@ Add a title to the table to explain contents. Use this title:
 and make sure 'Carbon Intensity' and 'Power Consumption' are in bold lettering.
 
 ```{python}
-gt_tbl_2 = (
-    gt_tbl_1
-    .tab_header(
-        title=md("2023 Mean **Carbon Intensity** (gCO2eq/kWh) and **Power Consumption** Breakdown (%)")
-    )
-)
+gt_tbl_2 = # (
+    #gt_tbl_1
+#)
 
 gt_tbl_2
 ```
@@ -57,20 +54,9 @@ emissions factors are based on IPCC 2014 defaults, while some are based on
 more accurate regional factors.
 
 ```{python}
-gt_tbl_3 = (
-    gt_tbl_2
-    .tab_source_note(
-        md(
-            '<br><div style="text-align: left;">'
-            "**Source**: api.electricitymap.org" 
-            " | **Methodology**: https://www.electricitymaps.com/methodology." 
-            " Some emissions factors are based on IPCC 2014 defaults, while some are based on more accurate regional factors."
-            "<br>All zones are publicly available on the *Carbon intensity and emission factors* tab via Google docs link<br>"
-            "</div>"
-            "<br>"
-        )
-    )
-)
+gt_tbl_3 = # (
+    #gt_tbl_2
+#)
 
 gt_tbl_3
 ```
@@ -78,27 +64,9 @@ gt_tbl_3
 Make the width of the `Zone` column 120px. All other columns fixed at 85px.
 
 ```{python}
-gt_tbl_4 = (
-    gt_tbl_3
-    .cols_width(
-        {
-            "Zone": "120px",
-            "CO2 Intensity": "85px",
-            "Hydro": "85px",
-            "Nuclear": "85px",
-            "Wind": "85px",
-            "Solar": "85px",
-            "Geothermal": "85px",
-            "Biomass": "85px",
-            "Gas": "85px",
-            "Coal": "85px",
-            "Oil": "85px",
-            "Unknown": "85px",
-            "Hydro Discharge": "85px",
-            "Battery Discharge": "85px"
-        }
-    ) 
-)
+gt_tbl_4 = # (
+    #gt_tbl_3
+#)
 
 gt_tbl_4
 ```
@@ -108,17 +76,9 @@ gt_tbl_4
 Format the fractional values by turning them into percentages.
 
 ```{python}
-gt_tbl_5 = (
-    gt_tbl_4
-    .fmt_percent(
-        columns=[
-            "Hydro", "Nuclear", "Wind", "Solar", "Geothermal",
-            "Biomass", "Gas", "Coal", "Oil", "Unknown",
-            "Hydro Discharge", "Battery Discharge"
-        ],
-        decimals=1
-    )
-)
+gt_tbl_5 = # (
+    #gt_tbl_4
+#)
 
 gt_tbl_5
 ```
@@ -126,58 +86,53 @@ gt_tbl_5
 Ensure that the `CO2 Intensity` values are formatted as integers.
 
 ```{python}
-gt_tbl_6 = gt_tbl_5.fmt_integer(columns="CO2 Intensity")
+gt_tbl_6 = # (
+    #gt_tbl_5
+#)
 
 gt_tbl_6
 ```
 
 ## data_color()
 
-Color the cells in the `CO2 Intensity` column according to value (in range of 0 to 900). Use the green to brown palette.
+Color the cells in the `CO2 Intensity` column according to value (in range of 0 to 900). Use this green to brown palette:
+
+```py
+["#00A600", "#E6E600", "#E8C32E", "#D69C4E", "#DC863B", "sienna", "sienna4", "tomato4", "brown"]
+```
 
 ```{python}
-gt_tbl_7 = (
-    gt_tbl_6
-    .data_color(
-        columns="CO2 Intensity",
-        palette=[
-            "#00A600", "#E6E600", "#E8C32E",
-            "#D69C4E", "#Dc863B", "sienna",
-            "sienna4", "tomato4", "brown"
-        ],
-        domain=[0, 900]
-    )
-)
+gt_tbl_7 = # (
+    #gt_tbl_6
+#)
 
 gt_tbl_7
 ```
 
-Color the cells in the `Hydro` to `Geothermal` columns according to value (in range of 0 to 1). Use the white to green palette.
+Color the cells in the `Hydro` to `Geothermal` columns according to value (in range of 0 to 1). Use this white to green palette:
+
+```py
+["snow", "chartreuse4", "chartreuse3", "#00A600"]
+```
 
 ```{python}
-gt_tbl_8 = (
-    gt_tbl_7
-    .data_color(
-        columns=["Hydro", "Nuclear", "Wind", "Solar", "Geothermal"],
-        palette=["#00A600", "chartreuse3", "chartreuse4", "snow"][::-1],
-        domain=[0, 1]
-    )
-)
+gt_tbl_8 = # (
+    #gt_tbl_7
+#)
 
 gt_tbl_8
 ```
 
-Color the cells in the `Biomass` column according to value (in range of 0 to 0.3). Use the white to light-brown palette.
+Color the cells in the `Biomass` column according to value (in range of 0 to 0.3). Use this white to light-brown palette:
+
+```py
+["snow", "#EEC900", "#E8C32E", "#D69C4E"]
+```
 
 ```{python}
-gt_tbl_9 = (
-    gt_tbl_8
-    .data_color(
-        columns="Biomass",
-        palette=["snow", "#EEC900", "#E8C32E", "#D69C4E"],
-        domain=[0, 0.3]
-    )
-)
+gt_tbl_9 = # (
+    #gt_tbl_8
+#)
 
 gt_tbl_9
 ```
@@ -185,14 +140,9 @@ gt_tbl_9
 Color the cells in the `Gas` to `Oil` columns according to value (in range of 0 to 1). Use the white to dark-brown palette.
 
 ```{python}
-gt_tbl_10 = (
-    gt_tbl_9
-    .data_color(
-        columns=["Gas", "Coal", "Oil"],
-        palette=["tomato4", "sienna4", "#D69C4E", "#Dc863B", "snow"][::-1],
-        domain=[0, 1]
-    )
-)
+gt_tbl_10 = # (
+    #gt_tbl_9
+#)
 
 gt_tbl_10
 ```
@@ -200,15 +150,9 @@ gt_tbl_10
 Ensure the remaining body cells have the 'snow' color applied.
 
 ```{python}
-gt_tbl_11 = (
-    gt_tbl_10
-    .data_color(
-        columns=[
-            "Zone", "Unknown", "Hydro Discharge", "Battery Discharge"
-        ],
-        palette=["snow", "snow", "snow", "snow"]
-    )
-)
+gt_tbl_11 = # (
+    #gt_tbl_10
+#)
 
 gt_tbl_11
 ```
@@ -218,7 +162,9 @@ gt_tbl_11
 As a starting point, align all cell contents (and the column labels) with center alignment.
 
 ```{python}
-gt_tbl_12 = gt_tbl_11.cols_align(align="center")
+gt_tbl_12 = # (
+    #gt_tbl_11
+#)
 
 gt_tbl_12
 ```
@@ -226,7 +172,9 @@ gt_tbl_12
 As a tweak, align the `Zone` column to the left.
 
 ```{python}
-gt_tbl_13 = gt_tbl_12.cols_align(align="left", columns="Zone")
+gt_tbl_13 = # (
+    #gt_tbl_12
+#)
 
 gt_tbl_13
 ```
@@ -234,7 +182,9 @@ gt_tbl_13
 Use the 'humanist' font stack for this table.
 
 ```{python}
-gt_tbl_14 = gt_tbl_13.opt_table_font(stack="humanist")
+gt_tbl_14 = # (
+    #gt_tbl_13
+#)
 
 gt_tbl_14
 ```
