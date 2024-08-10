@@ -28,7 +28,7 @@ reactions_mini
 Let's get the data into gt. Plus let's make a stub.
 
 ```{r}
-gt_tbl_1 <- #
+gt_tbl_1 <- gt(reactions_mini, rowname_col = "cmpd_name")
 
 gt_tbl_1
 ```
