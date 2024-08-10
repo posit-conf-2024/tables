@@ -27,7 +27,7 @@ coffee_sales
 Let's get the data into Great Tables.
 
 ```{python}
-gt_tbl_1 = #
+gt_tbl_1 = GT(coffee_sales)
 
 gt_tbl_1
 ```
