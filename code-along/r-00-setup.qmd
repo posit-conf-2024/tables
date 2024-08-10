@@ -17,3 +17,18 @@ Ensure that the following R libraries are installed:
 install.packages("gt")
 install.packages("tidyverse")
 ```
+
+To test that the installations were successful, use this:
+
+```{r}
+library(gt)
+library(tidyverse)
+```
+
+```{r}
+gt(exibble)
+```
+
+```{r}
+exibble |> select(num, char)
+```
