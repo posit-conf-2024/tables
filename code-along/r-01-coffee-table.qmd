@@ -25,7 +25,7 @@ coffee_sales
 Let's get the data into gt.
 
 ```{r}
-gt_tbl_1 <- #
+gt_tbl_1 <- gt(coffee_sales)
 
 gt_tbl_1
 ```
