@@ -21,7 +21,7 @@ that makes this possible?
 
     c. Add a source note to the table explaining that values are scaled
 
-4. Try out the different themes/colors in `.opt_table_font()`
+4. Try out the different themes/colors in `opt_stylize()`
 
 5. Change the alignment of the text in `cmpd_formula` to a center alignment (you
 have to find out the name of method that does this first).
